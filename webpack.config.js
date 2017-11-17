@@ -93,7 +93,11 @@ const config = {
       append: false,
       hash: true
     }),
-    new LodashModuleReplacementPlugin
+    new LodashModuleReplacementPlugin({
+      'shorthands'  : true,
+      'collections' : true,
+      'paths'       : true
+    })
   ]),
   module: {
     rules: [

@@ -2,12 +2,23 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { rootActions, passportActions } from 'reduxs'
+import { LoginScreen } from 'passport'
 
-
+@connect(
+  state => ({
+    accessTokenPending   : state.Passport.accessTokenPending,
+    accessTokenError     : state.Passport.accessTokenError,
+    accessTokenMessage   : state.Passport.accessTokenMessage,
+    auth                 : state.Passport.auth
+  }),
+  dispatch => ({
+    actions: bindActionCreators({...passportActions}, dispatch)
+  })
+)
 export default class App extends PureComponent {
 
   componentWillMount () {
-    
+    this.props.actions.accessToken()
   }
 
   componentWillReceiveProps (nextProps) {
@@ -15,10 +26,10 @@ export default class App extends PureComponent {
   }
   
   render () {
-    const { children } = this.props
+    const { children, auth } = this.props
     return (
       <div className={'layout-root'}>
-        {children}
+        {auth ? children : <LoginScreen />}
       </div>
     )
   }

@@ -7,8 +7,13 @@
   "author": "thondery <thondery@163.com>",
   "license": "MIT",
   "dependencies": {
+    "antd": "^3.0.0-beta.7",
+    "bluebird": "^3.5.1",
     "http-services": "^1.2.9",
+    "kenote-react-admin-passport": "^1.0.1",
     "localforage": "^1.5.3",
+    "rc-queue-anim": "^1.4.0",
+    "rc-tween-one": "^1.5.5",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^3.1.1",
@@ -24,6 +29,7 @@
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-import": "^1.6.2",
     "babel-plugin-lodash": "^3.2.11",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
@@ -45,6 +51,7 @@
     "jest": "^21.2.1",
     "json-loader": "^0.5.7",
     "lodash-webpack-plugin": "^0.11.4",
+    "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.6.0",
     "postcss-loader": "^2.0.8",
     "react-test-renderer": "^16.0.0",
@@ -61,8 +68,8 @@
     "compile": "cross-env NODE_ENV=production webpack --config webpack.prod.config.js --progress",
     "build:dll": "webpack --config webpack.dll.config.js --progress",
     "clean": "rimraf ./dist",
-    "test": "jest --u --colors",
-    "codecov": "jest --u --colors --coverage && codecov"
+    "test": "jest --u --colors --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
+    "codecov": "jest --u --colors --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill --coverage && codecov"
   },
   "jest": {
     "moduleFileExtensions": [

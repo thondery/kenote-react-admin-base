@@ -10,36 +10,28 @@ const { domain, apiPath, isMock } = config
 export const REDUX_FETCH_TIMEOUT = 500
 var mockConf = null
 
-class MockServies {
+class mockServies {
 
   constructor (isMock = true) {
     this.isMock = isMock
-    this.httpServices = new httpServices(domain, apiPath)
     if (isMock) {
       mockConf = require('../../mock').default
     }
   }
 
-  GET (url, params, header = {}) {
+  mock (url, params = {}, header = {}) {
+    let mockData = null
     if (this.isMock) {
-      let mockData = mockConf && mockConf[`GET: ${url}`]
-      mockData && fetchMock.mock('*', mockData)
+      mockData = mockConf && mockConf[url]
     }
-    return this.httpServices.GET(url, params, header)
-    fetchMock.restore()
-  }
-  
-  POST (url, params, header = {}) {
-    if (this.isMock) {
-      let mockData = mockConf && mockConf[`POST: ${url}`]
-      mockData && fetchMock.mock('*', mockData)
-    }
-    return this.httpServices.POST(url, params, header)
-    fetchMock.restore()
+    let matcher = `${domain}${apiPath}${url.replace(/^(POST|GET)\:\s/, '')}`
+    console.log(matcher)
+    mockData && fetchMock.mock(matcher, mockData(params, header))
   }
 }
 
-export const HttpServices = new MockServies(isMock)
+export const HttpServices = new httpServices(domain, apiPath)
+export const MockServies = new mockServies(isMock)
 
 export const getReducers = (Reduxs) => {
   let Reducers = {}

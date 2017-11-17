@@ -3,13 +3,12 @@
 // ------------------------------------
 import { createReducer, statusToError, getStatusError } from 'http-services'
 import * as types from './constant'
-import { actions } from './index';
 
 const initState = {
   initialPending: false,
   initialError: -1,
   initialMessage: null,
-  welcome: null
+  auth: null
 }
 
 const ACTION_HANDLERS = {
@@ -17,7 +16,7 @@ const ACTION_HANDLERS = {
     return {
       ...state,
       initialPending: true,
-      welcome: null
+      auth: null
     }
   },
   [types.ROOT_FETCH_INITIAL_SUCCESS]: (state, action) => {
@@ -26,7 +25,7 @@ const ACTION_HANDLERS = {
     let newState = null
     if (data && Status.code === 0) {
       newState = {
-        welcome: data.welcome
+        auth: data.auth
       }
     }
     return {

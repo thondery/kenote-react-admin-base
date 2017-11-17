@@ -41,10 +41,12 @@ module.exports = {
     index: './index.js'
   },
   alias        : {
+    assets         : path.resolve(__dirname, 'src/assets'),
     components     : path.resolve(__dirname, 'src/components'),
     config         : path.resolve(__dirname, 'src/config'),
     containers     : path.resolve(__dirname, 'src/containers'),
     features       : path.resolve(__dirname, 'src/features'),
+    passport       : path.resolve(__dirname, 'src/passport'),
     reduxs         : path.resolve(__dirname, 'src/reduxs'),
     services       : path.resolve(__dirname, 'src/services'),
     store          : path.resolve(__dirname, 'src/store'),
