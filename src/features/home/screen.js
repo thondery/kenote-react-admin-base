@@ -5,20 +5,18 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { rootActions } from 'reduxs'
+//import { rootActions } from 'reduxs'
 import { Button, Icon } from 'antd'
 import { HttpServices } from 'services/utils'
+import CoreLayout from 'containers/layout'
 
 @connect(
   state => ({
-    initialPending:     state.Root.initialPending,
-    initialError:     state.Root.initialError,
-    initialMessage:     state.Root.initialMessage,
-    auth:     state.Root.auth
+    auth:     state.Passport.auth
   }),
-  dispatch => ({
+  /*dispatch => ({
     actions: bindActionCreators({...rootActions}, dispatch)
-  })
+  })*/
 )
 export default class Home extends PureComponent {
   
@@ -31,14 +29,19 @@ export default class Home extends PureComponent {
   }
   
   render() {
-    const { location, auth, initialPending } = this.props
+    const { location, auth } = this.props
+    const options = {
+      location,
+      pageCode: '1001',
+      breadcrumb: [
+        { name: '主页' }
+      ]
+    }
     return (
-      <div>
-        <span>::welcome:: => '{initialPending ? (
-          <Icon type="loading" />
-        ) : JSON.stringify(auth)}'</span>
+      <CoreLayout {...options}>
+        <span>::welcome:: => '{JSON.stringify(auth)}'</span>
         <Button>Button</Button>
-      </div>
+      </CoreLayout>
     )
   }
 }

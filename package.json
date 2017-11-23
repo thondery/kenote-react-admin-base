@@ -10,6 +10,7 @@
     "antd": "^3.0.0-beta.7",
     "bluebird": "^3.5.1",
     "http-services": "^1.2.9",
+    "kenote-react-admin-layout": "^1.0.0",
     "kenote-react-admin-passport": "^1.0.1",
     "localforage": "^1.5.3",
     "rc-queue-anim": "^1.4.0",

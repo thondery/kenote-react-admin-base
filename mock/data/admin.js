@@ -12,7 +12,7 @@ export default [
       id         : 1,
       _id        : '59eff898ad11d66239592898',
       name       : '创建者',
-      flag       : []
+      flag       : ['1001', '1002', '1003']
     }
   },
   {

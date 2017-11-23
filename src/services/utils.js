@@ -49,3 +49,18 @@ export const getRoutes = (Features) => {
   }
   return Routes
 }
+
+export const getMenuSub = (routes, opts) => {
+  let menuSub = {
+    ...opts,
+    data:  []
+  }
+  for (let e of routes.childRoutes) {
+    !e.isIndex && menuSub.data.push({
+      key: e.path,
+      name: e.name,
+      path: opts.key
+    })
+  }
+  return menuSub
+}

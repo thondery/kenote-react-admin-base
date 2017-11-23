@@ -3757,6 +3757,10 @@ jstransform@~3.0.0:
     esprima-fb "~3001.1.0-dev-harmony-fb"
     source-map "0.1.31"
 
+kenote-react-admin-layout@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/kenote-react-admin-layout/-/kenote-react-admin-layout-1.0.0.tgz#ac2bb73d2f596f4b5c246ce9411106c44654189c"
+
 kenote-react-admin-passport@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/kenote-react-admin-passport/-/kenote-react-admin-passport-1.0.1.tgz#3d5da02e959abb894ea616f472e15f0fd180bf88"

@@ -39,3 +39,19 @@ body {
     font-size: 14px;
   }
 }
+
+.ant-notification-notice-message,
+.ant-notification-notice-with-icon .ant-notification-notice-message {
+  font-size: 14px;
+}
+
+.ant-notification-notice-description,
+.ant-notification-notice-with-icon .ant-notification-notice-description {
+  font-size: 12px;
+}
+
+.ant-notification-notice-icon {
+  font-size: 32px;
+  line-height: 32px;
+  margin-left: 0;
+}

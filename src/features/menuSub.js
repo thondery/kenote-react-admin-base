@@ -1,0 +1,1 @@
+export { menuSub as menuSubHome } from './home'
