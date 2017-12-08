@@ -1,3 +1,5 @@
+import group from './group'
+import _ from 'lodash'
 
 export default [
   {
@@ -8,12 +10,7 @@ export default [
     password   : 'admin888',
     accesskey  : '3c5d1893-546b-4292-9616-240772e4d655',
     createAt   : '2017-10-25T02:36:08.032Z',
-    group      : {
-      id         : 1,
-      _id        : '59eff898ad11d66239592898',
-      name       : '创建者',
-      flag       : ['1001', '1002', '1003']
-    }
+    group      : _.find(group, { id: 1 })
   },
   {
     id         : 2,
@@ -23,11 +20,6 @@ export default [
     password   : 'test123',
     accesskey  : '279fb736-e5c3-4dc1-a7ca-b0e8cfeb69ac',
     createAt   : '2017-10-25T02:36:08.032Z',
-    group      : {
-      id         : 2,
-      _id        : '59ef4526261e0e0094e91a91',
-      name       : '测试员',
-      flag       : []
-    }
+    group      : _.find(group, { id: 2 })
   }
 ]

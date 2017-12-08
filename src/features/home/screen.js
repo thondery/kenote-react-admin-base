@@ -34,7 +34,7 @@ export default class Home extends PureComponent {
     const { location, auth } = this.props
     const options = {
       location,
-      pageCode: '1001',
+      //pageCode: '1001',
       /*breadcrumb: [
         { name: '主页' }
       ]*/

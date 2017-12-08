@@ -6,11 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 </head>
 <body>
-  <div id="root" style="height: 100%"></div>
+  <div id="root" style="height: 100%">
+    <div class="layout-initial-mask">
+      <i class="anticon anticon-spin anticon-loading" style="color:#999; margin-bottom: 8px; font-size: 24px;"></i>
+      <div class="progress-span-initial">Loading...</div>
+      <div class="layout-progress-bar">
+        <div class="progress-bar-container">
+          <div class="progress-bar-pending-initial" />
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 <script>
   (function() {
-    
+    var render = setTimeout( function () {
+      window.start();
+      clearTimeout(render);
+      render = null;
+    }, 500);
   })()
-  </script>
+</script>
 </html>

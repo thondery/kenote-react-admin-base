@@ -11,39 +11,6 @@ export default class AdminHeader extends PureComponent {
     const { auth, actions } = this.props
     const menus = [
       {
-        key: 'expense',
-        name: '费用',
-        data: [
-          {
-            key: '1001',
-            name: '充值'
-          },
-          {
-            key: '1002',
-            name: '订单'
-          },
-          {
-            key: '1003',
-            name: '发票'
-          },
-          {
-            key: '1004',
-            name: '消费记录'
-          },
-          {
-            key: '1005',
-            name: '续费管理'
-          },
-          {
-            type: 'driver'
-          },
-          {
-            key: '1006',
-            name: '进入费用中心'
-          }
-        ]
-      },
-      {
         key: 'workorder',
         name: '工单',
         data: [
@@ -54,28 +21,6 @@ export default class AdminHeader extends PureComponent {
           {
             key: '1012',
             name: '提交工单'
-          }
-        ]
-      },
-      {
-        key: 'bsn',
-        name: '备案',
-        data: [
-          {
-            key: '1021',
-            name: '申请备案服务号'
-          },
-          {
-            key: '1022',
-            name: '备案服务号管理'
-          },
-          {
-            key: '1023',
-            name: '备案专区'
-          },
-          {
-            key: '1024',
-            name: 'ICP备案系统'
           }
         ]
       },
@@ -175,16 +120,6 @@ export default class AdminHeader extends PureComponent {
                 }
               })
             }
-          }
-        ]
-      },
-      {
-        key: 'lanage',
-        name: '简体中文',
-        data: [
-          {
-            key: '1041',
-            name: 'English'
           }
         ]
       },

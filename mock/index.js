@@ -9,5 +9,7 @@ export default {
     APILoad('./passport/modify-pwd', params, header),
 
   ['GET: /accesstoken']: (params, header) => 
-    APILoad('./passport/accesstoken', params, header)
+    APILoad('./passport/accesstoken', params, header),
+  ['GET: /admins/group']: (params, header) =>
+    APILoad('./admins/group-list', params, header)
 }

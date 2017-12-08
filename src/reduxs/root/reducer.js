@@ -5,43 +5,23 @@ import { createReducer, statusToError, getStatusError } from 'http-services'
 import * as types from './constant'
 
 const initState = {
-  initialPending: false,
-  initialError: -1,
-  initialMessage: null,
-  auth: null
+  initialPending: true,
+  initialProgress: 15
 }
 
 const ACTION_HANDLERS = {
-  [types.ROOT_FETCH_INITIAL_BEGIN]: (state, action) => {
-    return {
-      ...state,
-      initialPending: true,
-      auth: null
-    }
-  },
-  [types.ROOT_FETCH_INITIAL_SUCCESS]: (state, action) => {
+  [types.ROOT_INITIAL_COMPLETE]: (state, action) => {
     const { payload } = action
-    const { data, Status } = payload
-    let newState = null
-    if (data && Status.code === 0) {
-      newState = {
-        auth: data.auth
-      }
-    }
     return {
       ...state,
-      ...statusToError(payload, 'initialError', 'initialMessage'),
-      initialPending: false,
-      ...newState
+      initialPending: false
     }
   },
-  [types.ROOT_FETCH_INITIAL_FAILURE]: (state, action) => {
-    const { error } = action
-    const status = getStatusError(error)
+  [types.ROOT_INITIAL_PENDING]: (state, action) => {
+    const { payload } = action
     return {
       ...state,
-      ...statusToError({ status }, 'initialError', 'initialMessage'),
-      initialPending: false,
+      initialProgress: payload.pending
     }
   },
 }
