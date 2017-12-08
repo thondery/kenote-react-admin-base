@@ -3,60 +3,20 @@
 // ------------------------------------
 
 .passport_screen_container {
-  background: #f0f2f5;
-  background-image: url(../assets/images/TVYTbAXWheQpRcWDaDMu.svg);
-  width: 100%;
-  min-height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  padding: 110px 0 144px 0;
-  position: relative;
-  transition: all .8s;
 
-  .container_top {
-    text-align: center;
-
-    .container_top_header {
-      height: 44px;
-      line-height: 44px;
-
-      .container_top_header_logo {
-        height: 44px;
-        vertical-align: top;
-        margin-right: 16px;
-      }
-      .container_top_header_title {
-        font-size: 33px;
-        color: rgba(0, 0, 0, 0.85);
-        font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        font-weight: 600;
-        position: relative;
-        top: 2px;
-      }
-    }
-
-    .container_top_desc {
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.45);
-      margin-top: 12px;
-      margin-bottom: 40px;
-      transition: all .8s;
-    }
+  .ant-input-prefix {
+    top: 40%;
   }
 
   .container_main {
-    max-width: 368px;
-    margin: 0 auto;
-    padding: 20px 20px 20px;
-    transition: all .8s;
+    //max-width: 368px;
 
     .ant-form-item {
       margin-bottom: 24px;
     }
 
     .prefixIcon {
-      font-size: 14px;
+      font-size: 16px;
       color: rgba(0, 0, 0, 0.25);
     }
 
@@ -71,47 +31,6 @@
     .submit {
       width: 100%;
       margin-top: 24px;
-    }
-  }
-  
-  .container_footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    transition: all .8s;
-  }
-}
-
-@media only screen and (max-width: 760px) {
-  .passport_screen_container {
-    padding-top: 50px;
-
-    .container_main {
-      padding-top: 0;
-    }
-
-    .container_top_desc {
-      margin-bottom: 30px;
-    }
-  }
-}
-
-@media only screen and (max-height: 620px) {
-  .passport_screen_container {
-    padding-top: 50px;
-    overflow-y: auto;
-    padding-bottom: 0;
-    
-    .container_main {
-      padding-top: 0;
-    }
-
-    .container_top_desc {
-      margin-bottom: 30px;
-    }
-
-    .container_footer {
-      display: none;
     }
   }
 }

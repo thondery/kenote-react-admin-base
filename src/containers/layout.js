@@ -54,7 +54,7 @@ export default class CoreLayout extends PureComponent {
         <Sider {...{ location }} />
       ),
       header: (
-        <Header {...{ auth }} />
+        <Header {...{ auth, actions: this.props.actions }} />
       ),
       pageLoading: true
     }

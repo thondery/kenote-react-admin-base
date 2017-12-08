@@ -9,6 +9,7 @@ import fetchMock from 'fetch-mock'
 const { domain, apiPath, isMock } = config
 export const REDUX_FETCH_TIMEOUT = 500
 var mockConf = null
+const _HttpServices = new httpServices(domain, apiPath)
 
 class mockServies {
 
@@ -28,10 +29,29 @@ class mockServies {
     console.log(matcher)
     mockData && fetchMock.mock(matcher, mockData(params, header))
   }
+  
+  GET (url, params = {}, header = {}) {
+    let mockData = null
+    if (this.isMock) {
+      mockData = mockConf && mockConf[`GET: ${url}`]
+    }
+    let matcher = `${domain}${apiPath}${url}`
+    mockData && fetchMock.mock(matcher, mockData(params, header))
+    return _HttpServices.GET(url, params, header)
+  }
+
+  POST (url, params = {}, header = {}) {
+    let mockData = null
+    if (this.isMock) {
+      mockData = mockConf && mockConf[`POST: ${url}`]
+    }
+    let matcher = `${domain}${apiPath}${url}`
+    mockData && fetchMock.mock(matcher, mockData(params, header))
+    return _HttpServices.POST(url, params, header)
+  }
 }
 
-export const HttpServices = new httpServices(domain, apiPath)
-export const MockServies = new mockServies(isMock)
+export const HttpServices = new mockServies(isMock)
 
 export const getReducers = (Reduxs) => {
   let Reducers = {}

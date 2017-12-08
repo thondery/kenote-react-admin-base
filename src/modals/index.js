@@ -1,0 +1,1 @@
+export { default as ModifyPwdModal } from './modify-pwd'

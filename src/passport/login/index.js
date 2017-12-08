@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { passportActions } from 'reduxs'
 import { Screen } from 'kenote-react-admin-passport'
+import 'styles/passport.scss'
 
 const FormItem = Form.Item
 

@@ -12,7 +12,7 @@ const store = configureStore()
 
 render(
   <AppContainer>
-  <Root store={store} routeConfig={routeConfig} />
+    <Root store={store} routeConfig={routeConfig} />
   </AppContainer>,
   rootNode
 )

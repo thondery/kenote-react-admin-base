@@ -46,6 +46,7 @@ module.exports = {
     config         : path.resolve(__dirname, 'src/config'),
     containers     : path.resolve(__dirname, 'src/containers'),
     features       : path.resolve(__dirname, 'src/features'),
+    modals         : path.resolve(__dirname, 'src/modals'),
     passport       : path.resolve(__dirname, 'src/passport'),
     reduxs         : path.resolve(__dirname, 'src/reduxs'),
     services       : path.resolve(__dirname, 'src/services'),
