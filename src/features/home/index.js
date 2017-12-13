@@ -5,9 +5,17 @@ import { Icon } from 'antd'
 
 const routes = {
   path: '/',
-  name: 'Home',
+  name: '主页',
   childRoutes: [
-    { path: 'default', name: 'Home', component: Screen, isIndex: true },
+    { 
+      path: 'default', 
+      name: '主页', 
+      component: Screen, 
+      isIndex: true,
+      flags: [
+        { label: '页面访问', value: '1001' },
+      ]
+    },
   ]
 }
 
@@ -15,6 +23,6 @@ export default routes
 
 export const menuSub = getMenuSub(routes, {
     key:   `home`, 
-    name:  `主页`, 
+    //name:  `主页`, 
     icon:  <Icon type="home" />
   })

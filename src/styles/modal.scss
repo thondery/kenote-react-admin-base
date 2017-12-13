@@ -11,4 +11,37 @@
   .ant-form-explain {
     font-size: 12px;
   }
+
+  .box-meta {
+    border: 1px #e0e0e0 solid;
+    display: inline-block;
+    width: 100%;
+    border-radius: 4px;
+    position: relative;
+    padding-top: 30px;
+    margin-top: 20px;
+
+    .ant-form-item {
+      border-top: 0px;
+      padding-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      
+      &:nth-of-type(1n+3) { 
+        border-top: 1px #E0E0E0 dashed;
+      }
+    }
+  }
+
+  .box-title {
+    position: absolute;
+    top: -14px;
+    left: 15px;
+    padding: 1px 8px;
+    margin-left: -8px;
+    color: #777;
+    border-radius: 2px 2px 0 0;
+    background: #fff;
+    transition: background-color 0.4s;
+  }
 }

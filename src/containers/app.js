@@ -6,6 +6,7 @@ import { LoginScreen } from 'passport'
 import { Icon } from 'antd'
 import * as Modals from 'modals'
 import PubSub from 'pubsub-js'
+import _ from 'lodash'
 
 @connect(
   state => ({
@@ -24,6 +25,7 @@ export default class App extends PureComponent {
 
   state = {
     _Modal: null,
+    _ModalOpts: null,
     visible: false
   }
 
@@ -34,7 +36,14 @@ export default class App extends PureComponent {
   componentWillMount () {
     this.props.actions.accessToken()
     PubSub.subscribe('OPEN_MODAL', (msg, data) => {
-      this.setState({ _Modal: data, visible: true })
+      let options = {
+        _Modal: data,
+        _ModalOpts: null
+      }
+      if (_.isArray(data)) {
+        options = _.zipObject(['_Modal', '_ModalOpts'], data)
+      }
+      this.setState({ ...options, visible: true })
     })
   }
 
@@ -76,7 +85,8 @@ export default class App extends PureComponent {
         ) : (auth ? children : <LoginScreen />)}
         {RootModal && (
           <RootModal 
-            visible={this.state.visible} 
+            visible={this.state.visible}
+            ModalOpts={this.state._ModalOpts}
             onCancel={() => this.setState({ _Modal: null, visible: false })} 
             />
         )}

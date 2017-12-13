@@ -23,7 +23,7 @@ class mockServies {
   mock (url, params = {}, header = {}) {
     let mockData = null
     if (this.isMock) {
-      mockData = mockConf && mockConf[url]
+      mockData = mockConf && mockConf[urlFilter(url)]
     }
     let matcher = `${domain}${apiPath}${url.replace(/^(POST|GET)\:\s/, '')}`
     console.log(matcher)
@@ -33,7 +33,7 @@ class mockServies {
   GET (url, params = {}, header = {}) {
     let mockData = null
     if (this.isMock) {
-      mockData = mockConf && mockConf[`GET: ${url}`]
+      mockData = mockConf && mockConf[`GET: ${urlFilter(url)}`]
     }
     let matcher = `${domain}${apiPath}${url}`
     mockData && fetchMock.mock(matcher, mockData(params, header))
@@ -43,10 +43,17 @@ class mockServies {
   POST (url, params = {}, header = {}) {
     let mockData = null
     if (this.isMock) {
-      mockData = mockConf && mockConf[`POST: ${url}`]
+      mockData = mockConf && mockConf[`POST: ${urlFilter(url)}`]
     }
     let matcher = `${domain}${apiPath}${url}`
-    mockData && fetchMock.mock(matcher, mockData(params, header))
+    let mockParams = params
+    if (/\:id/.test(urlFilter(url))) {
+      mockParams = {
+        ...params,
+        ...urlMatch(url)
+      }
+    }
+    mockData && fetchMock.mock(matcher, mockData(mockParams, header))
     return _HttpServices.POST(url, params, header)
   }
 }
@@ -72,6 +79,7 @@ export const getRoutes = (Features) => {
 
 export const getMenuSub = (routes, opts) => {
   let menuSub = {
+    name: routes.name,
     ...opts,
     data:  []
   }
@@ -83,4 +91,13 @@ export const getMenuSub = (routes, opts) => {
     })
   }
   return menuSub
+}
+
+export const urlFilter = (url) => {
+  return url.replace(/([a-f\d]+){24}/, ':id')
+}
+
+export const urlMatch = (url) => {
+  let urlmatch = url.match(/([a-f\d]+){24}/)
+  return urlmatch && { id: urlmatch[0] }
 }
