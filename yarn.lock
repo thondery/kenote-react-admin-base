@@ -3758,19 +3758,19 @@ jstransform@~3.0.0:
     esprima-fb "~3001.1.0-dev-harmony-fb"
     source-map "0.1.31"
 
-kenote-react-admin-layout@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/kenote-react-admin-layout/-/kenote-react-admin-layout-1.0.0.tgz#ac2bb73d2f596f4b5c246ce9411106c44654189c"
+kenote-react-admin-layout@^1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/kenote-react-admin-layout/download/kenote-react-admin-layout-1.0.3.tgz#39591d732a9196e39f35e4f4e0398468f95b935e"
 
-kenote-react-admin-modal@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/kenote-react-admin-modal/-/kenote-react-admin-modal-1.0.2.tgz#922fd231796a2d35b29593b664786472237a02f8"
+kenote-react-admin-modal@^1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/kenote-react-admin-modal/download/kenote-react-admin-modal-1.0.3.tgz#43bfb0cbba8424f01c159aaede014558096aaef2"
   dependencies:
     react-modal "^3.1.4"
 
-kenote-react-admin-passport@^1.0.1:
-  version "1.0.1"
-  resolved "http://registry.npm.taobao.org/kenote-react-admin-passport/download/kenote-react-admin-passport-1.0.1.tgz#3d5da02e959abb894ea616f472e15f0fd180bf88"
+kenote-react-admin-passport@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/kenote-react-admin-passport/download/kenote-react-admin-passport-1.0.2.tgz#050d2234868f21fc6bdc5d84a6c0dd355fa94330"
 
 killable@^1.0.0:
   version "1.0.0"
@@ -4956,6 +4956,10 @@ postcss@^6.0.0, postcss@^6.0.1:
     chalk "^2.3.0"
     source-map "^0.6.1"
     supports-color "^4.4.0"
+
+preact@^8.2.7:
+  version "8.2.7"
+  resolved "http://registry.npm.taobao.org/preact/download/preact-8.2.7.tgz#316249fb678cd5e93e7cee63cea7bfb62dbd6814"
 
 prelude-ls@~1.1.2:
   version "1.1.2"

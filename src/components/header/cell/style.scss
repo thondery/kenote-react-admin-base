@@ -1,0 +1,101 @@
+
+.app-header-menu {
+  border-radius: 0;
+  min-width: 160px;
+  //float: right;
+  outline: none;
+  position: relative;
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  background-clip: padding-box;
+  margin-top: -3px;
+  cursor: default;
+}
+
+.app-header-menu-span {
+  height: 40px;
+  display: flex;
+  padding: 0 15px;
+  font-size: 12px;
+  //justify-content: center;
+  align-items: center;
+  color: #666;
+
+  &:hover, {
+    background-color: #f5f5f5;
+    color: #666;
+  }
+}
+
+.app-header-menu-driver {
+  margin: 10px 0;
+  background-color: #e4e4e4;
+}
+
+.app-header-menu-userpanel {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  padding-top: 12px;
+}
+
+.app-header-menu-userpanel-item {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+  font-size: 12px;
+  color: #888;
+  //cursor: pointer;
+
+  &:nth-of-type(3n+1) {
+    margin-left: 12px;
+  }
+
+  span {
+    margin-top: 8px;
+  }
+
+  i {
+    font-size: 22px;
+  }
+
+  &:hover {
+    background-color: #f5f5f5;
+    color: #666;
+  }
+}
+
+.app-header-menu-userpanel-driver {
+  margin-top: 12px;
+  background-color: #f5f5f5;
+}
+
+.app-header-menu-userpanel-span {
+  height: 48px;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 12px;
+
+  &:hover, {
+    background-color: #f5f5f5;
+    color: #666;
+  }
+}
+
+.app-header-menu-userpanel,
+.app-header-menu-userpanel-driver,
+.app-header-menu-userpanel-span {
+  width: 240px;
+}

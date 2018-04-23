@@ -4,7 +4,7 @@ export default process.env.NODE_ENV === 'development'
   apiPath: '/api/v1',
   isMock: true
 } : {
-  domain: 'http://localhost:4000',
+  domain: process.env.domain || 'http://localhost:4000',
   apiPath: '/api/v1',
-  isMock: true
+  isMock: false
 }

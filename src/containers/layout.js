@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { passportActions } from 'reduxs'
 import { Icon } from 'antd'
-import { Layout } from 'kenote-react-admin-layout'
+import { Layout } from 'components'
 import Sider from './sider'
 import Header from './header'
 

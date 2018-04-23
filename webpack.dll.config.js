@@ -2,6 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const project = require('./project.config')
 
 
@@ -41,7 +42,8 @@ const config = {
         reduce_vars: true,
       },
     }),
-    new webpack.optimize.ModuleConcatenationPlugin()
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new LodashModuleReplacementPlugin()
   ],
   module: {
     rules: [
@@ -89,6 +91,10 @@ const config = {
           name: '[path][name].[ext]'
         }
       }
+    ],
+    noParse: [
+      /moment-with-locales/,
+      /node_modules\/localforage\/dist\/localforage.js/
     ]
   }
 }

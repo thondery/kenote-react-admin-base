@@ -1,0 +1,138 @@
+// ------------------------------------
+// Sass Style
+// ------------------------------------
+.layout-header {
+  width: 100%;
+  height: 54px;
+  background: #373d41;
+  justify-content: space-between;
+  min-width: 1100px;
+  flex-direction: row;
+  display: flex;
+}
+
+.app-header-link-div {
+  border: 0 #2a2f32 solid;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  transition: all .8s;
+
+  &:hover {
+    background-color: #2a2f32;
+  }
+}
+
+.app-header-link {
+  //height: inherit;
+  display: flex;
+  border-color: #2a2f32;
+  border-style: solid;
+  border-width: 0;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 20px;
+
+  >span {
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei"
+  }
+
+  >i {
+    color: #fff;
+  }
+
+  .ant-tag {
+    height: 20px;
+    padding: 0 4px;
+    margin: 0;
+    margin-left: 4px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .ant-tag-text {
+    line-height: 1;
+    font-size: 12px;
+  }
+
+  &:hover,
+  &.app-header-link-active {
+    background-color: #2a2f32;
+  }
+}
+
+.app-header-start {
+  height: inherit;
+  display: flex;
+
+  .app-header-link-div,
+  .app-header-link {
+    border-right-width: 1px;
+
+    &:last-child {
+      border-right-width: 0;
+    }
+
+    i {
+      font-size: 14px;
+      margin-left: 4px;
+    }
+  }
+
+  .app-header-link-active {
+    background-color: #fff;
+
+    span {
+      color: #444;
+    }
+
+    i {
+      color: #444;
+    }
+  }
+}
+
+.app-header-end {
+  height: inherit;
+  display: flex;
+
+  .app-header-link-div,
+  .app-header-link {
+    border-left-width: 1px;
+
+    &:first-child {
+      border-left-width: 0;
+    }
+
+    >i {
+      font-size: 16px;
+      margin: 0 4px;
+    }
+  }
+}
+
+.app-header-logo {
+  width: 64px;
+  height: 51px;
+  padding: 0;
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+  }
+}
+
+.app-header-dashboard {
+  width: 196px;
+  height: 51px;
+}

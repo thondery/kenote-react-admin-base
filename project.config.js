@@ -6,6 +6,7 @@ module.exports = {
   env          : NODE_ENV,
   __PROD__     : NODE_ENV === 'production',
   __DEV__      : NODE_ENV === 'development',
+  domain       : process.env.domain || 'http://localhost:4000',
   globals      : {
     __DESKTOP__  : true
   },
@@ -34,7 +35,12 @@ module.exports = {
       'react-router-redux',
       'prop-types',
       'localforage',
-      'http-services'
+      'http-services',
+      'moment'
+    ],
+    'vendor_3': [
+      'kenote-react-admin-modal',
+      'kenote-react-admin-passport',
     ]
   },
   entry        : {

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Sider } from 'kenote-react-admin-layout'
+import { Sider } from 'components'
 import { Icon } from 'antd'
-import * as menuSubs from '../features/menuSub'
+import * as menuSubs from 'features/menuSub'
 
 export default ({ location }) => (
   <Sider 

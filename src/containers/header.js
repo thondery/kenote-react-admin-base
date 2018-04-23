@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Icon, notification} from 'antd'
-import { Header, getMenuList } from 'kenote-react-admin-layout'
+import { Header, getMenuList } from 'components'
 import Modal from 'kenote-react-admin-modal'
 import _ from 'lodash'
 import PubSub from 'pubsub-js'

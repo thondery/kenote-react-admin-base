@@ -20,7 +20,7 @@ export function getlist () {
             Authorization: token
           }
           const result = await HttpServices.GET('/admins/group', null, header)
-          fetchMock.restore()
+          //fetchMock.restore()
           dispatch(createAction(types.ADMINSGROUP_FETCH_LIST_SUCCESS, result))
           resolve(result)
         } catch (error) {

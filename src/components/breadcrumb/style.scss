@@ -1,0 +1,25 @@
+.ant-breadcrumb {
+  font-size: 15px;
+  border-left-width: 2px;
+  border-left-color: #49a9ee;
+  border-left-style: solid;
+  line-height: 15px;
+  padding-left: 10px;
+  position: relative;
+  margin-bottom: 40px;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: rgba(0,0,0,.2);
+    position: absolute;
+    top: 32px;
+    left: -2px;
+  }
+
+  a {
+    font-weight: normal;
+  }
+}

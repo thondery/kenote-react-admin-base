@@ -1,0 +1,97 @@
+.layout-sider {
+  flex: 0 0 260px;
+  background-color: #333;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all .3s ;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+  .menu-collapsed {
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: rgba(255, 255, 255, 0.67);
+    background: #333;
+    transition: all .3s ;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .menu-bodyer {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .menu-footer {
+    height: 50px;
+    color: rgba(255, 255, 255, 0.67);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #404040;
+
+    a {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .anticon {
+      font-size: 20px;
+    }
+
+    span {
+      margin-left: 10px;
+      font-size: 13px;
+    }
+  }
+
+  .ant-menu-item, .ant-menu-submenu-title {
+    font-size: 12px;
+  }
+
+  .ant-menu-dark, .ant-menu-dark {
+    background: #404040;
+
+    .ant-menu-sub {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+  .ant-menu-dark .ant-menu-inline.ant-menu-sub {
+    background: #333;
+  }
+
+  .ant-menu.ant-menu-dark .ant-menu-item-selected {
+    background-color: rgb(94, 148, 211);
+  }
+  .ant-menu-inline-collapsed > .ant-menu-item, .ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item, .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+    
+    padding: 0 24px !important;
+  }
+
+  .ant-menu-inline-collapsed {
+    width: 64px;
+  }
+}
+
+.ant-menu-submenu-popup {
+  background: transparent;
+  border-radius: 4px;
+
+  .ant-menu-sub {
+    background: #404040;
+    box-shadow: none;
+
+    span {
+      font-size: 12px;
+    }
+    
+  }
+}

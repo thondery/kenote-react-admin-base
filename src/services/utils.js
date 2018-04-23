@@ -26,7 +26,6 @@ class mockServies {
       mockData = mockConf && mockConf[urlFilter(url)]
     }
     let matcher = `${domain}${apiPath}${url.replace(/^(POST|GET)\:\s/, '')}`
-    console.log(matcher)
     mockData && fetchMock.mock(matcher, mockData(params, header))
   }
   

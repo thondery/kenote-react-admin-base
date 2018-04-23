@@ -9,7 +9,7 @@ const fs = require('fs-extra')
 const _ = require('lodash')
 const project = require('./project.config')
 
-const { __DEV__, __PROD__, globals } = project
+const { __DEV__, __PROD__, globals, domain } = project
 const contextPath = globals.__DESKTOP__ ? '' : '/'
 
 const getDllReferencePlugin = (items = null) => {
@@ -69,7 +69,8 @@ const config = {
   plugins: getDllReferencePlugin([
     new webpack.DefinePlugin(Object.assign({
       'process.env': {
-        'NODE_ENV': JSON.stringify(project.env)
+        'NODE_ENV': JSON.stringify(project.env),
+        'domain': JSON.stringify(domain)
       },
       __DEV__,
       __PROD__
@@ -136,6 +137,10 @@ const config = {
         }
       }
     ],
+    noParse: [
+      /moment-with-locales/,
+      /node_modules\/localforage\/dist\/localforage.js/
+    ]
   }
 }
 
